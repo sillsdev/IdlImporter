@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461</TargetFrameworks>
-    <RootNamespace>SIL.FieldWorks.Tools</RootNamespace>
-    <AssemblyTitle>IDLImporter</AssemblyTitle>
+    <RootNamespace>SIL.IDLImporter</RootNamespace>
+    <AssemblyTitle>IDLImporterTests</AssemblyTitle>
     <Configurations>Debug;Release</Configurations>
     <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle
       c-style arrays and OLECHAR pointers.</Description>
@@ -11,7 +11,7 @@
     <Authors>SIL International</Authors>
     <Product>IDLImporter</Product>
     <Copyright>Copyright © 2002-2020 SIL International</Copyright>
-    <PackageId>SIL.IdlImporter</PackageId>
+    <PackageId>SIL.IdlImporter.Tests</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -28,29 +28,18 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/feature/nuget
     <ChangelogFile>../CHANGELOG.md</ChangelogFile>
     <NoWarn>1591</NoWarn>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Antlr2.Runtime.Patched" Version="2.7.7" />
-    <PackageReference Include="Antlr2.Tools.Patched" Version="2.7.6.4" PrivateAssets="All" />
     <PackageReference Include="GitVersionTask" Version="5.3.4" PrivateAssets="All" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NUnit" Version="2.6.4" />
     <PackageReference Include="SIL.ReleaseTasks" Version="[2.3.2,)" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <Antlr Include="*.g" />
-    <None Include="IDLImporter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Pack>true</Pack>
-      <PackagePath>build/</PackagePath>
-    </None>
-    <Content Include="SIL.IdlImporter.targets">
-      <Pack>true</Pack>
-      <PackagePath>build</PackagePath>
-    </Content>
+    <ProjectReference Include="..\IDLImporter\IDLImporter.csproj" />
   </ItemGroup>
-
 
 </Project>
