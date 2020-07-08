@@ -6,8 +6,7 @@
     <RootNamespace>SIL.FieldWorks.Tools</RootNamespace>
     <AssemblyTitle>IDLImp</AssemblyTitle>
     <Configurations>Debug;Release</Configurations>
-    <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle
-      c-style arrays and OLECHAR pointers.</Description>
+    <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle c-style arrays and OLECHAR pointers.</Description>
     <Company>SIL International</Company>
     <Authors>SIL International</Authors>
     <Product>IDLImporter</Product>
