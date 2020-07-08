@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AppendToReleaseNotesProperty><![CDATA[
-See full changelog at https://github.com/sillsdev/IdlImporter/blob/feature/nuget/CHANGELOG.md]]>
+See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGELOG.md]]>
     </AppendToReleaseNotesProperty>
     <ChangelogFile>../CHANGELOG.md</ChangelogFile>
     <NoWarn>1591</NoWarn>
