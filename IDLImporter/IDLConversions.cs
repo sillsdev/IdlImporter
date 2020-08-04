@@ -20,7 +20,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 	#region XML type definition
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dummy.sil.org/IDLConversions.xsd")]

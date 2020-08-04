@@ -19,7 +19,7 @@ using System.Text;
 
 options {
 	language = "CSharp";
-	namespace  =  "SIL.FieldWorks.Tools";
+	namespace  =  "SIL.IdlImporterTool";
 }
 
 // TODO: the MIDL compiler accepts keywords as identifiers (e.g. char string[3]); our grammar doesn't

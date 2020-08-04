@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.CSharp;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 	/// ----------------------------------------------------------------------------------------
 	/// <summary>

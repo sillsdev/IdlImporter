@@ -15,7 +15,7 @@ using System.Threading;
 using antlr;
 using Newtonsoft.Json;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 	/// ----------------------------------------------------------------------------------------
 	/// <summary>

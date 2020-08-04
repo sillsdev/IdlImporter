@@ -15,7 +15,7 @@ using System.Text;
 
 options {
 	language = "CSharp";
-	namespace  =  "SIL.FieldWorks.Tools";
+	namespace  =  "SIL.IdlImporterTool";
 }
 
 //-----------------------------------------------------------------------------------------------

@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Windows.Forms;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 	/// ----------------------------------------------------------------------------------------
 	/// <summary>

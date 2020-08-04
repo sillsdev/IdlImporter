@@ -17,7 +17,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 
 	/// ----------------------------------------------------------------------------------------

@@ -17,7 +17,7 @@ using System.Text;
 using NUnit.Framework;
 using antlr;
 
-namespace SIL.FieldWorks.Tools
+namespace SIL.IdlImporterTool
 {
 
 	/// ----------------------------------------------------------------------------------------

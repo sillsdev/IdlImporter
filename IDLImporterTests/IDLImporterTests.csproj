@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461</TargetFrameworks>
-    <RootNamespace>SIL.IDLImporter</RootNamespace>
+    <RootNamespace>SIL.IDLImporterTool</RootNamespace>
     <AssemblyTitle>IDLImporterTests</AssemblyTitle>
     <Configurations>Debug;Release</Configurations>
     <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle
