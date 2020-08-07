@@ -135,6 +135,9 @@ namespace SIL.IdlImporterTool
 
 		public static IDLConversions Deserialize(string fileName)
 		{
+			if (!File.Exists(fileName))
+				throw new FileNotFoundException($"File {fileName} doesn't exist");
+
 			IDLConversions ret = null;
 			using (var reader = new XmlTextReader(fileName))
 			{
