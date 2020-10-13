@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `ILog` interface
+
 ### Changed
 
 - Create nuget package
+- New constructor overload for IDLImporter that takes a logger (`ILog`)
