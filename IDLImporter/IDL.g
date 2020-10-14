@@ -45,7 +45,6 @@ options {
  */
 class IDLParser extends Parser;
 options {
-	exportVocab=IDL;
 	buildAST = true;	// uses CommonAST by default
 }
 
@@ -1141,7 +1140,6 @@ midl_pragma_warning
 /* IDL LEXICAL RULES  */
 class IDLLexer extends Lexer;
 options {
-	exportVocab=IDL;
 	k=4;
 }
 

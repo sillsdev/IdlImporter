@@ -1,7 +1,16 @@
-# Building on Windows
+# IDLImporter
 
-From the src/IDLImp/IDLImporter directory:
-`nuget.exe restore IDLImporter.csproj -PackagesDirectory ..\packages`
+Cross-platform tool to import COM interfaces from an IDL file for use with .NET. To be used in
+addition to Microsoft's TLBImp. Can handle c-style arrays and `OLECHAR` pointers. Can run on
+Windows and Linux.
 
-From the  src/IDLImp directory:
-`"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\bin\msbuild.exe" IDLImp.csproj`
+## Installation
+
+Install the [SIL.IdlImporter](https://www.nuget.org/packages/SIL.IdlImporter) nuget package.
+
+## Building
+
+```bash
+msbuild /t:Restore
+msbuild
+```

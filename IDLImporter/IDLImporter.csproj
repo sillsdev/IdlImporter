@@ -32,7 +32,7 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
 
   <ItemGroup>
     <PackageReference Include="Antlr2.Runtime.Patched" Version="2.7.7" />
-    <PackageReference Include="Antlr2.Tools.Patched" Version="2.7.6.4" PrivateAssets="All" />
+    <PackageReference Include="Antlr2.Tools.Patched" Version="2.7.6.5" PrivateAssets="All" />
     <PackageReference Include="GitVersionTask" Version="5.3.4" PrivateAssets="All" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="SIL.ReleaseTasks" Version="[2.3.2,)" PrivateAssets="All" />
@@ -50,6 +50,57 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
       <Pack>true</Pack>
       <PackagePath>build</PackagePath>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IdhLexer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Idh.g</DependentUpon>
+    </Compile>
+    <Compile Update="IdhParser.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Idh.g</DependentUpon>
+    </Compile>
+    <Compile Update="IdhParserTokenTypes.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Idh.g</DependentUpon>
+    </Compile>
+    <None Update="IdhParserTokenTypes.txt">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Idh.g</DependentUpon>
+    </None>
+    <Compile Update="IDLLexer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IDL.g</DependentUpon>
+    </Compile>
+    <Compile Update="IDLParser.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IDL.g</DependentUpon>
+    </Compile>
+    <Compile Update="IDLParserTokenTypes.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IDL.g</DependentUpon>
+    </Compile>
+    <None Update="IDLParserTokenTypes.txt">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IDL.g</DependentUpon>
+    </None>
+    <Compile Update="SurveyorLexer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Surveyor.g</DependentUpon>
+    </Compile>
+    <Compile Update="SurveyorParser.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Surveyor.g</DependentUpon>
+    </Compile>
+    <Compile Update="SurveyorParserTokenTypes.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Surveyor.g</DependentUpon>
+    </Compile>
+    <None Update="SurveyorParserTokenTypes.txt">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Surveyor.g</DependentUpon>
+    </None>
   </ItemGroup>
 
 
