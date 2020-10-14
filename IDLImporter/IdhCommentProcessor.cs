@@ -182,9 +182,8 @@ namespace SIL.IdlImporterTool
 						string paramName = IDLConversions.ConvertParamName(match.Groups["name"].Value);
 						if (!Children.ContainsKey(paramName))
 						{
-							Console.WriteLine("Parameter mentioned in @param doesn't exist: {0}",
-								match.Groups["name"].Value);
-							continue;
+							IDLImporter.Logger.Warning($"Parameter mentioned in @param doesn't exist: {match.Groups["name"].Value}");
+							 continue;
 						}
 						StringBuilder bldr = Children[paramName]
 							.m_CommentBldr;

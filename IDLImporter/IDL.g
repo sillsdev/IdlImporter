@@ -703,7 +703,7 @@ struct_type returns [CodeTypeDeclaration type]
 			if (#name != null)
 			{
 				#if DEBUG_IDLGRAMMAR
-				System.Console.WriteLine(string.Format("struct {0}", #name.getText()));
+				IDLImporter.Logger.Message(string.Format("struct {0}", #name.getText()));
 				#endif
 				type.Name = #name.getText();
 			}
@@ -725,8 +725,7 @@ member [CodeTypeMemberCollection members]
 					List<string> arraySizes = (List<string>)attributes["IsArray"];
 					if (arraySizes.Count > 1)
 					{
-						Console.WriteLine(string.Format("Can't handle multi dimensional arrays: {0}",
-							name));
+						IDLImporter.Logger.Warning(string.Format("Can't handle multi dimensional arrays: {0}", name));
 					}
 
 					if (arraySizes.Count == 1)
@@ -738,7 +737,8 @@ member [CodeTypeMemberCollection members]
 							if (type is CodeMemberField)
 								((CodeMemberField)type).Type.ArrayRank = 1;
 							else
-								Console.WriteLine(string.Format("Unhandled type: {0}", type.GetType()));
+								IDLImporter.Logger.Message(string.Format("Unhandled type: {0}",
+									type.GetType()));
 
 							type.CustomAttributes.Add(new CodeAttributeDeclaration("MarshalAs",
 								new CodeAttributeArgument(
@@ -748,8 +748,7 @@ member [CodeTypeMemberCollection members]
 						}
 						else
 						{
-							Console.WriteLine(string.Format("Can't handle array dimension spec: '{0}' for {1}",
-								arraySizes[0], name));
+							IDLImporter.Logger.Warning(string.Format("Can't handle array dimension spec: '{0}' for {1}", arraySizes[0], name));
 						}
 					}
 					attributes.Remove("IsArray");
@@ -771,7 +770,7 @@ union_type
 			if (#name != null)
 			{
 				#if DEBUG_IDLGRAMMAR
-				System.Console.WriteLine(string.Format("union {0}", #name.getText()));
+				IDLImporter.Logger.Message(string.Format("union {0}", #name.getText()));
 				#endif
 				CodeTypeDeclaration type = new CodeTypeDeclaration();
 				type.IsStruct = true; // IsUnion does not exist
@@ -862,7 +861,7 @@ enum_type returns [CodeTypeDeclaration type]
 			if (#name != null)
 			{
 				#if DEBUG_IDLGRAMMAR
-				System.Console.WriteLine(string.Format("enum {0}", #name.getText()));
+				IDLImporter.Logger.Message(string.Format("enum {0}", #name.getText()));
 				#endif
 				type.Name = #name.getText();
 			}

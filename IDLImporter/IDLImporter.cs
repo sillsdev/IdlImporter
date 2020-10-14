@@ -26,17 +26,18 @@ namespace SIL.IdlImporterTool
 		internal static Dictionary<string, IdhCommentProcessor.CommentInfo> s_MoreComments =
 			new Dictionary<string,IdhCommentProcessor.CommentInfo>();
 		private EventWaitHandle _waitHandle;
-		private readonly ILog _logger;
 
 		public IDLImporter()
 		{
-			_logger = new ConsoleLogger();
+			Logger = new ConsoleLogger();
 		}
 
 		public IDLImporter(ILog logger)
 		{
-			_logger = logger;
+			Logger = logger;
 		}
+
+		public static ILog Logger { get; private set; }
 
 		private static CodeCommentStatementCollection AddFileBanner(string sInFile, string sOutFile)
 		{
@@ -397,7 +398,7 @@ namespace SIL.IdlImporterTool
 						if (second.HasGet)
 						{
 							// Get needs to come first
-							_logger.Error($"Error: [propget] after [propput/propputref] in {type.Name}.{first.Name}. " +
+							Logger.Error($"Error: [propget] after [propput/propputref] in {type.Name}.{first.Name}. " +
 										"For properties to work in .NET [propget] needs to be defined before [propput].");
 							fOk = false;
 
@@ -438,7 +439,7 @@ namespace SIL.IdlImporterTool
 				}
 				catch (SerializationException e)
 				{
-					_logger.Error($"Failed to serialize to internal data file. Reason: {e.Message}");
+					Logger.Error($"Failed to serialize to internal data file. Reason: {e.Message}");
 				}
 			}
 		}
@@ -467,7 +468,7 @@ namespace SIL.IdlImporterTool
 					}
 					catch (SerializationException e)
 					{
-						_logger.Error($"Failed to deserialize referenced data from file \"{fileName}\". Reason: {e.Message}");
+						Logger.Error($"Failed to deserialize referenced data from file \"{fileName}\". Reason: {e.Message}");
 					}
 				}
 				return null;
@@ -481,7 +482,7 @@ namespace SIL.IdlImporterTool
 			}
 			catch (Exception e)
 			{
-				_logger.Error($"Failed to deserialize referenced data from file \"{fileName}\". Reason: {e.Message}");
+				Logger.Error($"Failed to deserialize referenced data from file \"{fileName}\". Reason: {e.Message}");
 			}
 			return null;
 		}

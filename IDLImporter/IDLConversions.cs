@@ -443,8 +443,7 @@ namespace SIL.IdlImporterTool
 					{
 						if (type.BaseTypes.Count > 0)
 						{
-							Console.WriteLine("Error: only one base class supported (interface {0})!",
-								type.Name);
+							IDLImporter.Logger.Error($"only one base class supported (interface {type.Name})!");
 						}
 						else
 						{
@@ -835,7 +834,7 @@ namespace SIL.IdlImporterTool
 			interfaceType = null;
 			if (nameSpace.UserData[typeName] == null)
 			{
-				System.Console.WriteLine("Error: base type {0} not found!", typeName);
+				IDLImporter.Logger.Error($"base type {typeName} not found!");
 				return null;
 			}
 			else
@@ -857,7 +856,7 @@ namespace SIL.IdlImporterTool
 							newMember = new CodeMemberProperty();
 							break;
 						default:
-							Console.WriteLine("Unhandled member type: {0}", member.GetType());
+							IDLImporter.Logger.Warning($"Unhandled member type: {member.GetType()}");
 							continue;
 					}
 
@@ -1159,8 +1158,8 @@ namespace SIL.IdlImporterTool
 					if (i == method.Parameters.Count && !attributes.Contains("restricted"))
 					{
 						// if it's a restricted method we don't care
-						Console.WriteLine("Internal error: couldn't find MarshalAs " +
-										"attribute for parameter {0} of method {1}", param.Name, method.Name);
+						IDLImporter.Logger.Error("Internal error: couldn't find MarshalAs " +
+										$"attribute for parameter {param.Name} of method {method.Name}");
 						attributes.Add("warning",
 							"NOTE: This method probably doesn't work since it caused " +
 							$"an error on IDL import for parameter {param.Name}");
