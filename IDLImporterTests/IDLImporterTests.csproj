@@ -32,7 +32,7 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="5.3.4" PrivateAssets="All" />
+    <PackageReference Include="GitVersionTask" Version="5.5.1" PrivateAssets="All" />
     <PackageReference Include="NUnit" Version="3.13.0" />
     <PackageReference Include="SIL.ReleaseTasks" Version="2.4.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
