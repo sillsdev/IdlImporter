@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-04-27
+
 ### Added
 
 - `ILog` interface
@@ -24,3 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Create nuget package
 - New constructor overload for IDLImporter that takes a logger (`ILog`)
+
+## [Older]
+
+[Unreleased]: https://github.com/sillsdev/IdlImporter/compare/v2.0.0...master
+
+[2.0.0]: https://github.com/sillsdev/IdlImporter/compare/fcf0091...v2.0.0

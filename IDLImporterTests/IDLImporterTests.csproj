@@ -10,7 +10,7 @@
     <Company>SIL International</Company>
     <Authors>SIL International</Authors>
     <Product>IDLImporter</Product>
-    <Copyright>Copyright © 2002-2020 SIL International</Copyright>
+    <Copyright>Copyright © 2002-2021 SIL International</Copyright>
     <PackageId>SIL.IdlImporter.Tests</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
@@ -32,9 +32,9 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="5.3.4" PrivateAssets="All" />
-    <PackageReference Include="NUnit" Version="3.13.0" />
-    <PackageReference Include="SIL.ReleaseTasks" Version="2.4.0" PrivateAssets="All" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.6.8" PrivateAssets="All" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="SIL.ReleaseTasks" Version="2.5.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
