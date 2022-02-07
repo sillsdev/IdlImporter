@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>SIL.IdlImporterTool</RootNamespace>
     <AssemblyTitle>IDLImporter</AssemblyTitle>
     <Configurations>Debug;Release</Configurations>
