@@ -324,8 +324,6 @@ namespace SIL.IdlImporterTool
 			}
 			if (attributes["restricted"] != null)
 			{
-				member.CustomAttributes.Add(new CodeAttributeDeclaration("TypeLibFunc",
-					new CodeAttributeArgument(new CodeSnippetExpression("TypeLibFuncFlags.FRestricted"))));
 				attributes.Remove("restricted");
 			}
 			if (attributes["warning"] != null)
@@ -699,8 +697,6 @@ namespace SIL.IdlImporterTool
 			coClass.CustomAttributes.Add(new CodeAttributeDeclaration("ComImport"));
 			coClass.CustomAttributes.Add(new CodeAttributeDeclaration("ClassInterface",
 				new CodeAttributeArgument(new CodeSnippetExpression("ClassInterfaceType.None"))));
-			coClass.CustomAttributes.Add(new CodeAttributeDeclaration("TypeLibType",
-				new CodeAttributeArgument(new CodeSnippetExpression("TypeLibTypeFlags.FCanCreate"))));
 			coClass.BaseTypes.Add(type.BaseTypes[0]);
 			coClass.BaseTypes.Add(new CodeTypeReference(type.Name));
 
