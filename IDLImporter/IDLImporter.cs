@@ -11,7 +11,6 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
-using KGySoft.Serialization.Binary;
 using Newtonsoft.Json;
 
 namespace SIL.IdlImporterTool
@@ -433,8 +432,7 @@ namespace SIL.IdlImporterTool
 			using (var outFile = new FileStream(Path.ChangeExtension(fileName, "iip"),
 				FileMode.Create))
 			{
-				var formatter = new BinaryFormatter
-					{SurrogateSelector = new CustomSerializerSurrogateSelector()};
+				var formatter = new BinaryFormatter();
 				try
 				{
 					formatter.Serialize(outFile, cnamespace);
@@ -462,8 +460,7 @@ namespace SIL.IdlImporterTool
 			{
 				using (var inFile = new FileStream(fileName, FileMode.Open, FileAccess.Read))
 				{
-					var formatter = new BinaryFormatter
-						{SurrogateSelector = new CustomSerializerSurrogateSelector()};
+					var formatter = new BinaryFormatter();
 					try
 					{
 						var obj = formatter.Deserialize(inFile);
