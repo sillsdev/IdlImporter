@@ -416,7 +416,7 @@ namespace SIL.IdlImporterTool
 		/// ------------------------------------------------------------------------------------
 		/// <summary>
 		/// Serializes the data to a file with the same name as the IDL file but with the
-		/// extension ".json" (and ".iip" for backwards compatibility).
+		/// ".json" extension.
 		/// </summary>
 		/// <param name="fileName">Name of the IDL file.</param>
 		/// <param name="cnamespace">The namespace definition with all classes and methods.</param>
@@ -427,52 +427,19 @@ namespace SIL.IdlImporterTool
 				/* Formatting.Indented, */
 				new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
 			File.WriteAllText(Path.ChangeExtension(fileName, "json"), serializedDefinition);
-
-			// For backwards compatibility we additionally use binary serialization
-			using (var outFile = new FileStream(Path.ChangeExtension(fileName, "iip"),
-				FileMode.Create))
-			{
-				var formatter = new BinaryFormatter();
-				try
-				{
-					formatter.Serialize(outFile, cnamespace);
-				}
-				catch (SerializationException e)
-				{
-					Logger.Error($"Failed to serialize to internal data file. Reason: {e.Message}");
-				}
-			}
 		}
 
 		/// ------------------------------------------------------------------------------------
 		/// <summary>
 		/// Deserializes the data.
 		/// </summary>
-		/// <param name="fileName">Name of the JSON or IIP file.</param>
+		/// <param name="fileName">Name of the JSON file.</param>
 		/// <returns>The namespace definition with all classes and methods.</returns>
 		/// ------------------------------------------------------------------------------------
 		private CodeNamespace DeserializeData(string fileName)
 		{
 			if (!File.Exists(fileName))
 				return null;
-
-			if (Path.GetExtension(fileName) == "iip")
-			{
-				using (var inFile = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-				{
-					var formatter = new BinaryFormatter();
-					try
-					{
-						var obj = formatter.Deserialize(inFile);
-						return obj as CodeNamespace;
-					}
-					catch (SerializationException e)
-					{
-						Logger.Error($"Failed to deserialize referenced data from file \"{fileName}\". Reason: {e.Message}");
-					}
-				}
-				return null;
-			}
 
 			try
 			{

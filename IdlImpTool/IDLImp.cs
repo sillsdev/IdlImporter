@@ -30,7 +30,7 @@ namespace SIL.IdlImporterTool
 			System.Console.WriteLine("\t/i idhfile\tname of IDH file for comments (Default: none)");
 			System.Console.WriteLine("\t/n namespace\tNamespace of the file to be produced");
 			System.Console.WriteLine("\t/u namespace\tadditional using namespaces");
-			System.Console.WriteLine("\t/r iipfile\tFile name of .iip file to use to resolve references");
+			System.Console.WriteLine("\t/r jsonfile\tFile name of .json file to use to resolve references");
 			System.Console.WriteLine("\t/x (0|1)\t1= create, 0= suppress XML comments (Default: 1)");
 			System.Console.WriteLine("\t/? \t\tshow this help information");
 		}
