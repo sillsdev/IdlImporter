@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <RootNamespace>SIL.IdlImporterTool</RootNamespace>
     <AssemblyTitle>IDLImporter</AssemblyTitle>
     <Configurations>Debug;Release</Configurations>
@@ -15,7 +15,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <OutputPath>../output/$(Configuration)</OutputPath>
+    <OutputPath>../output/$(Configuration)/$(TargetFramework)/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <PackageOutputPath>../output</PackageOutputPath>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../idlimp.snk</AssemblyOriginatorKeyFile>
