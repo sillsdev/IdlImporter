@@ -16,6 +16,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2022-07-08
+
+### Changed
+
+- switched to .NET Standard 2.0
+
+### Removed
+
+- removed TypeLib attribute support in code generation
+- removed deprecated binary serialization
+
 ## [2.0.0] - 2021-04-27
 
 ### Added
@@ -29,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Older]
 
-[Unreleased]: https://github.com/sillsdev/IdlImporter/compare/v2.0.0...master
+[Unreleased]: https://github.com/sillsdev/IdlImporter/compare/v3.0.0...master
 
+[3.0.0]: https://github.com/sillsdev/IdlImporter/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/sillsdev/IdlImporter/compare/fcf0091...v2.0.0
