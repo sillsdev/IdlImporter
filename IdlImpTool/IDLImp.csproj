@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp3.1;net5.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>SIL.FieldWorks.Tools</RootNamespace>
     <AssemblyTitle>IDLImp</AssemblyTitle>
@@ -10,7 +10,9 @@
     <Company>SIL International</Company>
     <Authors>SIL International</Authors>
     <Product>IDLImporter</Product>
-    <Copyright>Copyright © 2002-2021 SIL International</Copyright>
+    <Copyright>Copyright © 2002-2022 SIL International</Copyright>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>idlimport</ToolCommandName>
     <PackageId>SIL.IdlImporter.Tool</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
@@ -28,7 +30,7 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
     <ChangelogFile>../CHANGELOG.md</ChangelogFile>
     <NoWarn>1591</NoWarn>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <IsPackable>false</IsPackable>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,10 +41,6 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
 
   <ItemGroup>
     <ProjectReference Include="..\IDLImporter\IDLImporter.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
 
 </Project>

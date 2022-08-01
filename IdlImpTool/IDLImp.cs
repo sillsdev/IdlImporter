@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Windows.Forms;
+using System.Reflection;
 
 namespace SIL.IdlImporterTool
 {
@@ -22,11 +22,11 @@ namespace SIL.IdlImporterTool
 			System.Console.WriteLine("\nIDLImporter. Creates .NET interfaces from an IDL file.");
 			System.Console.WriteLine("Copyright (c) 2002-2015, SIL International. All Rights Reserved.\n");
 			System.Console.WriteLine("Syntax: {0} [options] file.idl",
-				Path.GetFileName(Application.ExecutablePath));
+				Path.GetFileName(Path.GetFileName(Assembly.GetEntryAssembly().Location)));
 			System.Console.WriteLine("possible options:");
 			System.Console.WriteLine("\t/o outfile\tname of created file (Default: file.cs)");
 			System.Console.WriteLine("\t/c configfile\tname of XML configuration file ({0}.xml)",
-				Path.GetFileNameWithoutExtension(Application.ExecutablePath));
+				Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location)));
 			System.Console.WriteLine("\t/i idhfile\tname of IDH file for comments (Default: none)");
 			System.Console.WriteLine("\t/n namespace\tNamespace of the file to be produced");
 			System.Console.WriteLine("\t/u namespace\tadditional using namespaces");
@@ -45,10 +45,10 @@ namespace SIL.IdlImporterTool
 		[STAThread]
 		public static int Main(string[] args)
 		{
-			bool fOk = true;
+			bool fOk;
 			try
 			{
-				if (args.Length < 1 || args.Length == 1 && (args[0] == "/?" || args[0] == "-?"))
+				if (args.Length < 1 || args.Length == 1 && (args[0] == "/?" || args[0] == "-?") || !args[args.Length - 1].EndsWith(".idl"))
 				{
 					ShowHelp();
 					return 0;
@@ -57,7 +57,12 @@ namespace SIL.IdlImporterTool
 				// Get all necessary file names
 				List<string> usingNamespaces = new List<string>();
 				string sFileName = args[args.Length - 1];
-				string sXmlFile = Path.ChangeExtension(Application.ExecutablePath, "xml");
+				if (!sFileName.EndsWith("idl"))
+				{
+					ShowHelp();
+					return 0;
+				}
+				string sXmlFile = Path.ChangeExtension(Path.GetFileName(Assembly.GetEntryAssembly().Location), "xml");
 				string sOutFile = Path.ChangeExtension(sFileName, "cs");
 				string sNamespace = Path.GetFileNameWithoutExtension(sFileName);
 				StringCollection idhFiles = new StringCollection();
@@ -82,7 +87,7 @@ namespace SIL.IdlImporterTool
 							break;
 						case "/u":
 						case "-u":
-							usingNamespaces.Add(args[i*2+1]);
+							usingNamespaces.AddRange(args[i*2+1].Split(';'));
 							break;
 						case "/?":
 						case "-?":
@@ -94,11 +99,11 @@ namespace SIL.IdlImporterTool
 							break;
 						case "/i":
 						case "-i":
-							idhFiles.Add(args[i * 2 + 1]);
+							idhFiles.AddRange(args[i * 2 + 1].Split(';'));
 							break;
 						case "/r":
 						case "-r":
-							refFiles.Add(args[i * 2 + 1]);
+							refFiles.AddRange(args[i * 2 + 1].Split(';'));
 							break;
 						default:
 							Console.WriteLine("\nWrong parameter: {0}\n", args[i*2]);
