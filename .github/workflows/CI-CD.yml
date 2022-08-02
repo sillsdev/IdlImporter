@@ -1,0 +1,50 @@
+name: IdlImporter CI/CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@77a48bbb85cd3809790223e895ba4b6cbc110fe8
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore Windows
+      run: dotnet restore --runtime=win10-x64
+
+    - name: Build Windows
+      run: dotnet build IdlImpTool --no-restore --runtime=win10-x64
+
+    - name: Restore Linux
+      run: dotnet restore --runtime=linux-x64
+
+    - name: Build Linux
+      run: dotnet build IdlImpTool --no-restore --runtime=linux-x64
+
+    - name: Pack IdlImporter (also builds any runtime)
+      run: dotnet pack IDLImporter --include-symbols --no-restore -o .
+
+    - name: Pack IdlImpTool Everything (also builds any runtime)
+      run: dotnet pack IdlImpTool --include-symbols --no-restore -o .
+
+    - name: Publish to Nuget
+      run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.SILLSDEV_PUBLISH_NUGET_ORG}} --skip-duplicate
+      if: github.event_name == 'push'
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: NugetPackages
+        path: ./*.nupkg
+      if: github.event_name == 'pull_request'
