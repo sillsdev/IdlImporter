@@ -15,8 +15,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <OutputPath>../output/$(Configuration)/$(TargetFramework)/</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>../output/$(Configuration)/</OutputPath>
     <PackageOutputPath>../output</PackageOutputPath>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../idlimp.snk</AssemblyOriginatorKeyFile>
@@ -44,7 +43,6 @@ See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGE
   <ItemGroup>
     <Antlr Include="*.g" />
     <None Include="IDLImporter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Pack>true</Pack>
       <PackagePath>build/</PackagePath>
     </None>
