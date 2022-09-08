@@ -4,34 +4,14 @@
     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
-    <RootNamespace>SIL.FieldWorks.Tools</RootNamespace>
     <AssemblyTitle>IDLImp</AssemblyTitle>
-    <Configurations>Debug;Release</Configurations>
     <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle c-style arrays and OLECHAR pointers.</Description>
-    <Company>SIL International</Company>
-    <Authors>SIL International</Authors>
-    <Product>IDLImporter</Product>
-    <Copyright>Copyright © 2002-2022 SIL International</Copyright>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>idlimport</ToolCommandName>
     <PackageId>SIL.IdlImporter.Tool</PackageId>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageOutputPath>../output</PackageOutputPath>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../idlimp.snk</AssemblyOriginatorKeyFile>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AppendToReleaseNotesProperty><![CDATA[
-See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGELOG.md]]>
-    </AppendToReleaseNotesProperty>
-    <ChangelogFile>../CHANGELOG.md</ChangelogFile>
-    <NoWarn>1591</NoWarn>
-    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <IsPackable>true</IsPackable>
+    <OutputPath>$(MSBuildThisFileDirectory)/bin/$(Configuration)/</OutputPath>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="GitVersion.MsBuild" Version="5.10.3" PrivateAssets="All" />
     <PackageReference Include="SIL.ReleaseTasks" Version="2.5.0" PrivateAssets="All" />

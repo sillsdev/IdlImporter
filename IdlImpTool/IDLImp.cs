@@ -20,7 +20,7 @@ namespace SIL.IdlImporterTool
 		private static void ShowHelp()
 		{
 			System.Console.WriteLine("\nIDLImporter. Creates .NET interfaces from an IDL file.");
-			System.Console.WriteLine("Copyright (c) 2002-2015, SIL International. All Rights Reserved.\n");
+			System.Console.WriteLine("Copyright (c) 2002-2022, SIL International. All Rights Reserved.\n");
 			System.Console.WriteLine("Syntax: {0} [options] file.idl",
 				Path.GetFileName(Path.GetFileName(Assembly.GetEntryAssembly().Location)));
 			System.Console.WriteLine("possible options:");

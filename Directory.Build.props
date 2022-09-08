@@ -1,0 +1,26 @@
+<Project>
+  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0;net5.0</TargetFrameworks>
+    <RootNamespace>SIL.IDLImporterTool</RootNamespace>
+    <Configurations>Debug;Release</Configurations>
+    <Company>SIL International</Company>
+    <Authors>SIL International</Authors>
+    <Product>IDLImporter</Product>
+    <Copyright>Copyright © 2002-2022 SIL International</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/sillsdev/IdlImporter</PackageProjectUrl>
+    <OutputPath>$(MSBuildThisFileDirectory)/output/$(Configuration)/</OutputPath>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)/output</PackageOutputPath>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)/idlimp.snk</AssemblyOriginatorKeyFile>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AppendToReleaseNotesProperty><![CDATA[
+See full changelog at https://github.com/sillsdev/IdlImporter/blob/master/CHANGELOG.md]]>
+    </AppendToReleaseNotesProperty>
+    <ChangelogFile>$(MSBuildThisFileDirectory)/CHANGELOG.md</ChangelogFile>
+    <NoWarn>1591</NoWarn>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+  </PropertyGroup>
+</Project>
