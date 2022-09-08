@@ -1,10 +1,13 @@
-name: IdlImporter CI/CD
+name: "Build and Pack"
 
 on:
   push:
     branches: [ master ]
+    tags: [ v* ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: windows-latest
