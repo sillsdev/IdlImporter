@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.1] - 2022-09-08
+
+### Added
+
+- publish IdlImpTool as global tool
+
+### Changed
+
+- re-add net461 target
+- add net5.0 target
+- remove Windows.Forms dependency
+
 ## [3.0.0] - 2022-07-08
 
 ### Changed
@@ -40,7 +52,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Older]
 
-[Unreleased]: https://github.com/sillsdev/IdlImporter/compare/v3.0.0...master
+[Unreleased]: https://github.com/sillsdev/IdlImporter/compare/v3.0.1...master
 
+[3.0.1]: https://github.com/sillsdev/IdlImporter/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/sillsdev/IdlImporter/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/sillsdev/IdlImporter/compare/fcf0091...v2.0.0
