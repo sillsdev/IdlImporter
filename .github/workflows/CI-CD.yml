@@ -56,7 +56,7 @@ jobs:
     if: github.event_name == 'push'
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # v3.0.0
+      uses: actions/download-artifact@076f0f7dd036d87e8e04f5f00d614e790308961b # v3.0.0
       with:
         path: artifacts
 
