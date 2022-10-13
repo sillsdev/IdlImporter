@@ -19,7 +19,7 @@ jobs:
         fetch-depth: 0
 
     - name: Install .NET Core
-      uses: actions/setup-dotnet@c7e7147fd3e41056e75a761416c06f5fa781b5fb # tag=v3.0.0
+      uses: actions/setup-dotnet@4d4a70f4a5b2a5a5329f13be4ac933f2c9206ac0 # tag=v3.0.2
       with:
         dotnet-version: 6.0.x
 
