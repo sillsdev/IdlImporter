@@ -56,7 +56,7 @@ jobs:
     if: github.event_name == 'push'
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # renovate: tag=v3.0.0
+      uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # v3.0.1
       with:
         path: artifacts
 
