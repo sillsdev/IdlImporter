@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
     <AssemblyTitle>IDLImp</AssemblyTitle>
     <Description>Imports the COM interfaces from an IDL file for use with .NET. Can handle c-style arrays and OLECHAR pointers.</Description>
     <PackAsTool>true</PackAsTool>

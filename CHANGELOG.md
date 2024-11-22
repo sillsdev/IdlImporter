@@ -14,7 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
-## [Unreleased]
+## [4.0.0] - 2024-11-22
+
+- Add net4.6.2 and net8.0 support
+- Drop net5.0, netcore3.1, and net4.6.1 support
+- Update dependencies
 
 ## [3.0.1] - 2022-09-08
 

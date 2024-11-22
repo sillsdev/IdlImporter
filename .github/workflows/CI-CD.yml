@@ -21,13 +21,15 @@ jobs:
     - name: Install .NET Core
       uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25 # v4.1.0
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
 
     - name: Restore Windows
-      run: dotnet restore --runtime=win10-x64
+      run: dotnet restore --runtime=win-x64
 
-    - name: Build Windows
-      run: dotnet build IdlImpTool --no-restore --runtime=win10-x64
+    - name: Build & Test Windows
+      run: |
+        dotnet build IdlImpTool --no-restore --runtime=win-x64
+        dotnet test IdlImporterTests
 
     - name: Restore Linux
       run: dotnet restore --runtime=linux-x64
