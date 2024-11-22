@@ -17,3 +17,19 @@ Install the [SIL.IdlImporter](https://www.nuget.org/packages/SIL.IdlImporter) nu
 dotnet restore
 dotnet build
 ```
+
+## Testing Locally
+
+### Unit testing
+```bash
+dotnet test
+```
+
+### Using your local changes
+```bash
+dotnet pack
+dotnet tool uninstall -g SIL.IdlImporter.Tool
+dotnet tool install -g --add-source output SIL.IdlImporter.Tool --version [new version]
+```
+Note: If you are testing with FieldWorks you should make this change in the BuildInclude.targets in the ViewsInterfaces project
+

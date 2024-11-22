@@ -1,19 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDLImporter", "IDLImporter\IDLImporter.csproj", "{D23CFDE1-DF89-433E-BE88-6C08279F7349}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDLImporter", "IDLImporter\IDLImporter.csproj", "{D23CFDE1-DF89-433E-BE88-6C08279F7349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDLImp", "IdlImpTool\IDLImp.csproj", "{B5904870-00F3-4833-A981-E22B79A16106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDLImp", "IdlImpTool\IDLImp.csproj", "{B5904870-00F3-4833-A981-E22B79A16106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDLImporterTests", "IDLImporterTests\IDLImporterTests.csproj", "{6E18BE34-1CF5-48EA-9C47-F0E89A32E648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDLImporterTests", "IDLImporterTests\IDLImporterTests.csproj", "{6E18BE34-1CF5-48EA-9C47-F0E89A32E648}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{17449FC8-15AE-49B9-9DEA-22AAFF0F9285}"
-ProjectSection(SolutionItems) = preProject
-	README.md = README.md
-	GitVersion.yml = GitVersion.yml
-	CHANGELOG.md = CHANGELOG.md
-	.gitignore = .gitignore
-	.editorconfig = .editorconfig
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		Directory.Build.props = Directory.Build.props
+		GitVersion.yml = GitVersion.yml
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +37,8 @@ Global
 		{6E18BE34-1CF5-48EA-9C47-F0E89A32E648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E18BE34-1CF5-48EA-9C47-F0E89A32E648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E18BE34-1CF5-48EA-9C47-F0E89A32E648}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
